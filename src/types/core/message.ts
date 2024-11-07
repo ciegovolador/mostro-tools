@@ -52,17 +52,21 @@ export enum Action {
 
 export interface MessageContent {
   order?: Order
-  payment_request?: [Order | null, string, number?]
+  payment_request?: {
+    order: Order | null
+    invoice: string
+    amount?: number  // in sats
+  }
   text_message?: string
   peer?: { pubkey: string }
   rating_user?: {
-    value: number
+    value: 1 | 2 | 3 | 4 | 5  // Explicit rating values
     confirmed: boolean
   }
   dispute?: {
     id: string
-    buyer_token?: number
-    seller_token?: number
+    buyer_token?: number  // Add JSDoc explaining token purpose
+    seller_token?: number  // Add JSDoc explaining token purpose
   }
 }
 
