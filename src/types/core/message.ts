@@ -55,18 +55,18 @@ export interface MessageContent {
   payment_request?: {
     order: Order | null
     invoice: string
-    amount?: number  // in sats
+    amount?: number // in sats
   }
   text_message?: string
   peer?: { pubkey: string }
   rating_user?: {
-    value: 1 | 2 | 3 | 4 | 5  // Explicit rating values
+    value: 1 | 2 | 3 | 4 | 5 // Explicit rating values
     confirmed: boolean
   }
   dispute?: {
     id: string
-    buyer_token?: number  // Add JSDoc explaining token purpose
-    seller_token?: number  // Add JSDoc explaining token purpose
+    buyer_token?: number // Add JSDoc explaining token purpose
+    seller_token?: number // Add JSDoc explaining token purpose
   }
 }
 
@@ -78,9 +78,12 @@ export interface MessageKind {
   content?: MessageContent
 }
 
-export interface Message {
-  order?: MessageKind
-  dispute?: MessageKind
-  cant_do?: MessageKind
-  rate?: MessageKind
-}
+export type Message =
+  | { type: 'order', message: MessageKind & { action: OrderActions } }
+  | { type: 'dispute', message: MessageKind & { action: DisputeActions } }
+  | { type: 'cant_do', message: MessageKind & { action: Action.CantDo } }
+  | { type: 'rate', message: MessageKind & { action: RatingActions } }
+
+type OrderActions = Action.NewOrder | Action.TakeSell | Action.TakeBuy | Action.PayInvoice | Action.AddInvoice | Action.FiatSent | Action.FiatSentOk | Action.Release | Action.Released | Action.Cancel | Action.Canceled | Action.WaitingBuyerInvoice | Action.WaitingSellerToPay | Action.BuyerTookOrder | Action.HoldInvoicePaymentAccepted | Action.HoldInvoicePaymentSettled | Action.HoldInvoicePaymentCanceled | Action.CooperativeCancelInitiatedByYou | Action.CooperativeCancelInitiatedByPeer | Action.CooperativeCancelAccepted
+type DisputeActions = Action.Dispute | Action.DisputeInitiatedByYou | Action.DisputeInitiatedByPeer
+type RatingActions = Action.Rate | Action.RateUser | Action.RateReceived

@@ -6,6 +6,9 @@ export enum DisputeStatus {
   RELEASED = 'released',
 }
 
+/* This TypeScript code is defining an interface named `Dispute`. An interface in TypeScript is a way
+to define the structure of an object. In this case, the `Dispute` interface has the following
+properties: */
 export interface Dispute {
   id: string
   order_id: string
