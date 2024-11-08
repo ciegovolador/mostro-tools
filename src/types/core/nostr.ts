@@ -12,7 +12,7 @@ export interface Seal {
   pubkey: string
   created_at: number
   kind: 13
-  tags: []
+  tags: string[][]
   content: string
   sig: string
 }
