@@ -25,26 +25,24 @@ jobs:
         with:
           fetch-depth: 0
       # run before Set node , otherwise show Unable to locate executable file: pnpm error
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - name: Use just
+      - uses: extractions/setup-just@v2
 
       - name: Set node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
+          cache: npm
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install Dependencies
-        run: pnpm i
+        run: npm install
 
       - name: Build
-        run: pnpm run build
+        run: just build
       - name: Test
-        run: pnpm run test
+        run: just test
       - uses: codecov/codecov-action@v4
-      - name: Release
-        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
