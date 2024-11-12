@@ -14,6 +14,9 @@ test-only file:
 pack:
   npm pack
 
+install:
+  bun install
+
 publish: build
   npm publish
   perl -i -0pe "s/},\n  \"optionalDependencies\": {\n/,/" package.json
