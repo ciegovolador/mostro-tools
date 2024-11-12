@@ -1,0 +1,17 @@
+export declare function hello(name: string): string;
+export declare function dispute(): string;
+export declare function neworder(): string;
+export declare function takesell(): string;
+export declare function takebuy(): string;
+export declare function addinvoice(): string;
+export declare function getdm(): string;
+export declare function fiatsent(): string;
+export declare function release(): string;
+export declare function cancel(): string;
+export declare function rate(): string;
+export declare function admcancel(): string;
+export declare function admsettle(): string;
+export declare function admlistdisputes(): string;
+export declare function admaddsolver(): string;
+export declare function admtakedispute(): string;
+export declare function help(command: string): string;
