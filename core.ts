@@ -5,35 +5,35 @@ export function hello(name: string): string {
     return `Hello ${name}! I am the core :)`
 }
 
-export function dispute(): string {
+export function dispute(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
 
-export function lib(): string {
+export function lib(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
 
-export function message(): string {
-
-    return `Hello ${name}! I am the core :)`
-}
-
-
-export function order(): string {
+export function message(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
 
 
-export function rating(): string {
+export function order(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
 
 
-export function user(): string {
+export function rating(name: string): string {
+
+    return `Hello ${name}! I am the core :)`
+}
+
+
+export function user(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }

@@ -2,10 +2,16 @@
   "type": "module",
   "name": "mostro-tools",
   "version": "0.0.1",
-  "description": "Tools for making a Mostro client.",
+  "description": "Tools for developing Mostro clients.",
+  "author": "MostroP2P <https://primal.net/p/npub1m0str0d7z2ww8rdh20t2n9lx520xjwhaq24p68umqp06wwrwtsnqen40un>",
+  "license": "MIT",
+  "homepage": "https://github.com/MostroP2P/mostro-tools#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/MostroP2P/mostro-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MostroP2P/mostro-tools/issues"
   },
   "files": [
     "lib"
@@ -26,7 +32,6 @@
       "types": "./lib/types/mostro.d.ts"
     }
   },
-  "license": "Unlicense",
   "dependencies": {
     "@noble/ciphers": "^0.5.1",
     "@noble/curves": "1.2.0",
@@ -73,6 +78,5 @@
   },
   "scripts": {
     "prepublish": "just build"
-  },
-  "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
+  }
 }

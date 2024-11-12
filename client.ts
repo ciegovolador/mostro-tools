@@ -5,71 +5,71 @@ export function hello(name: string): string {
 }
 
 
-export function dispute(): string {
+export function dispute(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
 
-export function neworder(): string {
+export function neworder(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
 
-export function takesell(): string {
-
-    return `Hello ${name}! I am the core :)`
-}
-
-
-export function takebuy(): string {
+export function takesell(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
 
 
-export function addinvoice(): string {
+export function takebuy(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
 
-export function getdm(): string {
+
+export function addinvoice(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
 
-export function fiatsent(): string {
+export function getdm(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
-export function release(): string {
+
+export function fiatsent(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
-export function cancel(): string {
+export function release(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
-export function rate(): string {
+export function cancel(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
-export function admcancel(): string {
+export function rate(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
-export function admsettle(): string {
+export function admcancel(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
-export function admlistdisputes(): string {
+export function admsettle(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
-export function admaddsolver(): string {
+export function admlistdisputes(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
-export function admtakedispute(): string {
+export function admaddsolver(name: string): string {
+
+    return `Hello ${name}! I am the core :)`
+}
+export function admtakedispute(name: string): string {
 
     return `Hello ${name}! I am the core :)`
 }
