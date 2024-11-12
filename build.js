@@ -11,6 +11,7 @@ const entryPoints = fs
       // file !== 'test-helpers.ts' &&
       // file !== 'helpers.ts' &&
       // file !== 'benchmarks.ts' &&
+      !file.endsWith('.config.ts') &&
       !file.endsWith('.test.ts') &&
       fs.statSync(join(process.cwd(), file)).isFile(),
   )
