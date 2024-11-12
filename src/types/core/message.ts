@@ -1,5 +1,5 @@
 // src/types/core/message.ts
-import type { Order } from './order'
+import type { Order } from './order.ts'
 
 export enum Action {
   // Order actions

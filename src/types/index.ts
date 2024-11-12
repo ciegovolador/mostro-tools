@@ -1,5 +1,5 @@
-export * from './client'
-export * from './core'
+export * from './client/index.ts'
+export * from './core/index.ts'
 
 export const NOSTR_CONSTANTS = {
   REPLACEABLE_EVENT_KIND: 38383,

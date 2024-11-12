@@ -1,4 +1,4 @@
-import type { Dispute } from '../core'
+import type { Dispute } from '../core/index.ts'
 
 export interface AdminFunctions {
   admcancel: (orderId: string) => Promise<void>

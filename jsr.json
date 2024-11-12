@@ -1,0 +1,10 @@
+{
+  "name": "@mostro/tools",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./index.ts",
+    "./core": "./core.ts",
+    "./client": "./client.ts",
+    "./mostro": "./mostro.ts"
+  }
+}
