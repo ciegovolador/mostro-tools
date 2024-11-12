@@ -1,4 +1,4 @@
-import type { MessageKind } from '../core/message'
+import type { MessageKind } from '../core/index.ts'
 
 export interface MessageFunctions {
   getdm: (pubkey: string) => Promise<MessageKind[]>

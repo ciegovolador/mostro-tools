@@ -5,7 +5,7 @@ export interface ClientConfig {
   debug?: boolean
 }
 
-export * from './admin'
-export * from './disputes'
-export * from './messages'
-export * from './orders'
+export * from './admin.ts'
+export * from './disputes.ts'
+export * from './messages.ts'
+export * from './orders.ts'
