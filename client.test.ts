@@ -2,7 +2,7 @@ import { test, expect } from 'bun:test'
 import { client } from './mostro.ts'
 
 
-test('Cliet', () => {
+test('Client', () => {
 
     const testValue = 'Mostro'
     const result = client.hello(testValue)
