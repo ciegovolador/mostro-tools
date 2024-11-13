@@ -1,4 +1,4 @@
-import { foo, wait } from '../src/index.ts'
+import { foo, wait } from '@/index.ts'
 import { test, expect } from 'bun:test'
 
 

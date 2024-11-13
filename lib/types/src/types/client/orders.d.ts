@@ -1,4 +1,4 @@
-import type { Order } from '../core/index.ts';
+import type { Order } from '@/types/core/index.ts';
 export interface OrderFunctions {
     listorders: () => Promise<Order[]>;
     neworder: (order: Partial<Order>) => Promise<Order>;
