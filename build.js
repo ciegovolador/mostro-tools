@@ -1,27 +1,25 @@
-const fs = require('node:fs')
-const esbuild = require('esbuild')
-const { join } = require('path')
+const fs = require('node:fs');
+const esbuild = require('esbuild');
+const { join } = require('path');
 
-const entryPoints = fs
-  .readdirSync(process.cwd())
-  .filter(
-    file =>
-      file.endsWith('.ts') &&
-      // file !== 'core.ts' &&
-      // file !== 'test-helpers.ts' &&
-      // file !== 'helpers.ts' &&
-      // file !== 'benchmarks.ts' &&
-      !file.endsWith('.config.d.ts') &&
-      !file.endsWith('.config.ts') &&
-      !file.endsWith('.test.ts') &&
-      fs.statSync(join(process.cwd(), file)).isFile(),
-  )
+const entryPoints = fs.readdirSync(process.cwd()).filter(
+  (file) =>
+    file.endsWith('.ts') &&
+    // file !== 'core.ts' &&
+    // file !== 'test-helpers.ts' &&
+    // file !== 'helpers.ts' &&
+    // file !== 'benchmarks.ts' &&
+    !file.endsWith('.config.d.ts') &&
+    !file.endsWith('.config.ts') &&
+    !file.endsWith('.test.ts') &&
+    fs.statSync(join(process.cwd(), file)).isFile()
+);
 
 let common = {
   entryPoints,
   bundle: true,
   sourcemap: 'external',
-}
+};
 
 esbuild
   .build({
@@ -31,7 +29,7 @@ esbuild
     packages: 'external',
     tsconfig: './tsconfig.json',
   })
-  .then(() => console.log('esm build success.'))
+  .then(() => console.log('esm build success.'));
 
 esbuild
   .build({
@@ -42,11 +40,11 @@ esbuild
     tsconfig: './tsconfig.json',
   })
   .then(() => {
-    const packageJson = JSON.stringify({ type: 'commonjs' })
-    fs.writeFileSync(`${__dirname}/lib/cjs/package.json`, packageJson, 'utf8')
+    const packageJson = JSON.stringify({ type: 'commonjs' });
+    fs.writeFileSync(`${__dirname}/lib/cjs/package.json`, packageJson, 'utf8');
 
-    console.log('cjs build success.')
-  })
+    console.log('cjs build success.');
+  });
 
 esbuild
   .build({
@@ -62,4 +60,4 @@ esbuild
     },
     tsconfig: './tsconfig.json',
   })
-  .then(() => console.log('standalone build success.'))
+  .then(() => console.log('standalone build success.'));

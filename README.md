@@ -2,10 +2,9 @@
 
 Tools for developing Mostro clients.
 
-This package is only providing lower-level functionality. 
+This package is only providing lower-level functionality.
 
-
-## Roadmap 
+## Roadmap
 
 ### Mostro Core Implementation
 
@@ -19,7 +18,6 @@ Implementation of core functionality in TypeScript/JavaScript. See [mostro-core]
 - `order.ts` - Order management system
 - `rating.ts` - User rating implementation
 - `user.ts` - User management functionality
-
 
 ### Client Implementation
 

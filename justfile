@@ -24,12 +24,10 @@ publish: build
   git checkout -- package.json
 
 format:
-  eslint --ext .ts --fix *.ts
-  prettier --write *.ts
+  bun format
 
 lint:
-  eslint --ext .ts *.ts
-  prettier --check *.ts
+  bun lint
 
 benchmark:
   bun build --target=node --outfile=bench.js benchmarks.ts

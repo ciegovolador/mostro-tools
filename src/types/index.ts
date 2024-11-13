@@ -1,5 +1,5 @@
-export * from './client/index.ts'
-export * from './core/index.ts'
+export * from './client/index.ts';
+export * from './core/index.ts';
 
 export const NOSTR_CONSTANTS = {
   REPLACEABLE_EVENT_KIND: 38383,
@@ -9,4 +9,4 @@ export const NOSTR_CONSTANTS = {
     INVOICE_SUBMISSION: 15 * 60,
     HOLD_INVOICE_EXPIRATION: 24 * 60 * 60,
   },
-} as const
+} as const;
