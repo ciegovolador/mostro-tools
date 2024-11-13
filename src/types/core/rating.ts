@@ -20,11 +20,11 @@
  * @property min_rate - Minimum possible rating value (typically 1)
  */
 export interface Rating {
-  total_reviews: number
-  total_rating: number
-  last_rating: number
-  max_rate: number
-  min_rate: number
+  total_reviews: number;
+  total_rating: number;
+  last_rating: number;
+  max_rate: number;
+  min_rate: number;
 }
 
 /**
@@ -35,7 +35,9 @@ export interface Rating {
  * @returns number - Average rating between min_rate and max_rate, or 0 if no reviews
  */
 export function calculateAverageRating(rating: Rating): number {
-  return rating.total_reviews > 0 ? rating.total_rating / rating.total_reviews : 0
+  return rating.total_reviews > 0
+    ? rating.total_rating / rating.total_reviews
+    : 0;
 }
 
 /**
@@ -50,7 +52,7 @@ export const RatingUtils = {
    * @param value - New rating value to validate
    */
   isValidRating: (rating: Rating, value: number): boolean => {
-    return value >= rating.min_rate && value <= rating.max_rate
+    return value >= rating.min_rate && value <= rating.max_rate;
   },
 
   /**
@@ -59,12 +61,12 @@ export const RatingUtils = {
    */
   isValidRatingObject: (rating: Rating): boolean => {
     return (
-      rating.total_reviews >= 0
-      && rating.total_rating >= 0
-      && rating.last_rating >= rating.min_rate
-      && rating.last_rating <= rating.max_rate
-      && rating.min_rate <= rating.max_rate
-    )
+      rating.total_reviews >= 0 &&
+      rating.total_rating >= 0 &&
+      rating.last_rating >= rating.min_rate &&
+      rating.last_rating <= rating.max_rate &&
+      rating.min_rate <= rating.max_rate
+    );
   },
 
   /**
@@ -74,7 +76,7 @@ export const RatingUtils = {
    */
   addNewRating: (currentRating: Rating, newRatingValue: number): Rating => {
     if (!RatingUtils.isValidRating(currentRating, newRatingValue)) {
-      throw new Error('Invalid rating value')
+      throw new Error('Invalid rating value');
     }
 
     return {
@@ -82,6 +84,6 @@ export const RatingUtils = {
       total_reviews: currentRating.total_reviews + 1,
       total_rating: currentRating.total_rating + newRatingValue,
       last_rating: newRatingValue,
-    }
+    };
   },
-}
+};

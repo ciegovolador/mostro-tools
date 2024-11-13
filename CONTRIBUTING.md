@@ -48,6 +48,7 @@ If you're looking for somewhere to start contributing, check out the [good first
 ## Pull Request Guidelines
 
 Each pull request should focus on a single change. For example:
+
 - ✅ Add new feature to orders handling
 - ✅ Fix bug in message encryption
 - ❌ Add new feature AND refactor message handling (should be two PRs)
@@ -96,6 +97,7 @@ npm run format
 ```
 
 ### Types
+
 - feat: A new feature
 - fix: A bug fix
 - docs: Documentation only changes
@@ -116,16 +118,19 @@ We follow a review process similar to Bitcoin Core:
 ## Setting Up Development Environment
 
 1. Clone your fork:
+
    ```bash
    git clone https://github.com/your-username/mostro-tools.git
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Create a branch for your changes:
+
    ```bash
    git checkout -b feat/my-feature
    ```

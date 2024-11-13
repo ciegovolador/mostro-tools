@@ -10,12 +10,12 @@ export enum DisputeStatus {
 to define the structure of an object. In this case, the `Dispute` interface has the following
 properties: */
 export interface Dispute {
-  id: string
-  order_id: string
-  status: DisputeStatus
-  solver_pubkey: string | null
-  created_at: number
-  taken_at: number
-  buyer_token: number | null
-  seller_token: number | null
+  id: string;
+  order_id: string;
+  status: DisputeStatus;
+  solver_pubkey: string | null;
+  created_at: number;
+  taken_at: number;
+  buyer_token: number | null;
+  seller_token: number | null;
 }

@@ -1,12 +1,11 @@
-import { foo, wait } from '@/index'
+import { foo, wait } from '@/index.ts';
+import { test, expect } from 'bun:test';
 
-describe('[Default]', () => {
-  it('foo should be bar', () => {
-    expect(foo).toBe('bar')
-  })
+test('foo should be bar', () => {
+  expect(foo).toBe('bar');
+});
 
-  it('wait 100ms', async () => {
-    const flag = await wait(100)
-    expect(flag).toBe(true)
-  })
-})
+test('wait 100ms', async () => {
+  const flag = await wait(100);
+  expect(flag).toBe(true);
+});
