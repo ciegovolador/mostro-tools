@@ -1,8 +1,8 @@
 export interface ClientConfig {
-    mostroPubKey: string;
-    relays: string[];
-    privateKey?: string;
-    debug?: boolean;
+  mostroPubKey: string;
+  relays: string[];
+  privateKey?: string;
+  debug?: boolean;
 }
 export * from './admin.ts';
 export * from './disputes.ts';

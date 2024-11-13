@@ -1,11 +1,11 @@
-export const foo = 'bar'
+export const foo = 'bar';
 
 export function wait(timeout?: number) {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(true)
-    }, timeout)
-  })
+      resolve(true);
+    }, timeout);
+  });
 }
 
-export const dirname = __dirname
+export const dirname = __dirname;

@@ -8,5 +8,5 @@ const options = {
     { name: 'beta', prerelease: true },
     { name: 'alpha', prerelease: true },
   ],
-}
-export default options
+};
+export default options;

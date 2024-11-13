@@ -6,13 +6,13 @@
  * For now, we keep it as number to maintain compatibility with current implementation.
  */
 export interface User {
-    id: string;
-    pubkey: string;
-    is_admin: boolean;
-    is_solver: boolean;
-    is_banned: boolean;
-    category: number;
-    created_at: number;
+  id: string;
+  pubkey: string;
+  is_admin: boolean;
+  is_solver: boolean;
+  is_banned: boolean;
+  category: number;
+  created_at: number;
 }
 export declare const isAdmin: (user: User) => boolean;
 export declare const isSolver: (user: User) => boolean;

@@ -20,11 +20,11 @@
  * @property min_rate - Minimum possible rating value (typically 1)
  */
 export interface Rating {
-    total_reviews: number;
-    total_rating: number;
-    last_rating: number;
-    max_rate: number;
-    min_rate: number;
+  total_reviews: number;
+  total_rating: number;
+  last_rating: number;
+  max_rate: number;
+  min_rate: number;
 }
 /**
  * Calculates the average rating for a user.
@@ -38,22 +38,22 @@ export declare function calculateAverageRating(rating: Rating): number;
  * Rating utility functions for validation and calculations
  */
 export declare const RatingUtils: {
-    calculateAverage: typeof calculateAverageRating;
-    /**
-     * Validates if a new rating value is within allowed bounds
-     * @param rating - Current rating object
-     * @param value - New rating value to validate
-     */
-    isValidRating: (rating: Rating, value: number) => boolean;
-    /**
-     * Validates if a Rating object has valid properties
-     * @param rating - Rating object to validate
-     */
-    isValidRatingObject: (rating: Rating) => boolean;
-    /**
-     * Adds a new rating to the existing rating object
-     * @param currentRating - Current rating object
-     * @param newRatingValue - New rating value to add
-     */
-    addNewRating: (currentRating: Rating, newRatingValue: number) => Rating;
+  calculateAverage: typeof calculateAverageRating;
+  /**
+   * Validates if a new rating value is within allowed bounds
+   * @param rating - Current rating object
+   * @param value - New rating value to validate
+   */
+  isValidRating: (rating: Rating, value: number) => boolean;
+  /**
+   * Validates if a Rating object has valid properties
+   * @param rating - Rating object to validate
+   */
+  isValidRatingObject: (rating: Rating) => boolean;
+  /**
+   * Adds a new rating to the existing rating object
+   * @param currentRating - Current rating object
+   * @param newRatingValue - New rating value to add
+   */
+  addNewRating: (currentRating: Rating, newRatingValue: number) => Rating;
 };
