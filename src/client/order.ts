@@ -1,6 +1,6 @@
-import type { Order } from '../../types/core/order'
-import { createOrder } from '../../core/order'
-import { publishEvent } from '../../utils/nostr'
+import type { Order } from '../types/core/order.ts'
+import { createOrder } from '../core/order.ts'
+import { publishEvent } from '../utils/nostr.ts'
 
 /**
  * Create and publish a new order.

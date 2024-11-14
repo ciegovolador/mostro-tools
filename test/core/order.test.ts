@@ -1,8 +1,8 @@
 import { generateSecretKey, getPublicKey } from 'nostr-tools'
 import { describe, expect, it } from 'vitest'
-import { OrderStatus, OrderType } from '../types/core/order'
-import { unwrapGiftWrapEvent } from '../utils/nostr'
-import { createOrder } from './order'
+import { OrderStatus, OrderType } from '../../src/types/core/order.ts'
+import { unwrapGiftWrapEvent } from '../../src/utils/nostr.ts'
+import { createOrder } from '../../src/core/order.ts'
 
 describe('createOrder with NIP-59', () => {
   it('should create a valid NIP-59 wrapped Nostr event for an order', () => {
