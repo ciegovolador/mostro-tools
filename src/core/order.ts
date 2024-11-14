@@ -1,7 +1,7 @@
 import type { Order } from '../types/core/order.ts';
 import { finalizeEvent } from 'nostr-tools';
 import { OrderStatus, OrderType } from '../types/core/order.ts';
-import { createGiftWrapEvent } from '../utils/nostr.ts';
+import { createGiftWrapEvent, GiftWrapContent } from '../utils/nostr.ts';
 
 /**
  * Validates and ensures that the required fields for an order are valid.
@@ -67,5 +67,9 @@ export function createOrder(
   const plainEvent = finalizeEvent(eventTemplate, senderPrivateKey);
 
   // Wrap the event using NIP-59
-  return createGiftWrapEvent(plainEvent, senderPrivateKey, recipientPublicKey);
+  return createGiftWrapEvent(
+    JSON.parse(JSON.stringify(plainEvent)) as GiftWrapContent,
+    senderPrivateKey,
+    recipientPublicKey
+  );
 }
