@@ -1,6 +1,6 @@
-import { nip59, SimplePool } from 'nostr-tools'
+import { SimplePool, nip59 } from 'nostr-tools';
 
-const pool = new SimplePool()
+const pool = new SimplePool();
 
 /**
  * Publish an event to a specific relay.
@@ -8,19 +8,23 @@ const pool = new SimplePool()
  * @param relayUrl The relay URL to publish the event to.
  */
 export async function publishEvent(event: any, relayUrl: string): Promise<void> {
-  const relay = pool.getRelay(relayUrl) || pool.addRelay(relayUrl, true)
+  try {
+    const results = await Promise.all(pool.publish([relayUrl], event));
 
-  return new Promise((resolve, reject) => {
-    const pub = relay.publish(event)
-    pub.on('ok', () => {
-      console.log(`Event successfully published to ${relayUrl}`)
-      resolve()
-    })
-    pub.on('failed', (reason: string) => {
-      console.error(`Failed to publish event to ${relayUrl}: ${reason}`)
-      reject(new Error(reason))
-    })
-  })
+    const success = results.every(result => result === 'ok');
+    if (success) {
+      console.log(`Event successfully published to ${relayUrl}`);
+    } else {
+      console.error(`Failed to publish event to some relays.`);
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(`Error publishing event: ${error.message}`);
+    } else {
+      console.error(`Unknown error publishing event.`);
+    }
+    throw error;
+  }
 }
 
 /**
@@ -31,9 +35,9 @@ export async function publishEvent(event: any, relayUrl: string): Promise<void> 
  * @returns A wrapped Nostr event.
  */
 export function createGiftWrapEvent(content: any, senderPrivateKey: Uint8Array, recipientPublicKey: string): any {
-  const rumor = nip59.createRumor(content, senderPrivateKey)
-  const seal = nip59.createSeal(rumor, senderPrivateKey, recipientPublicKey)
-  return nip59.createWrap(seal, recipientPublicKey)
+  const rumor = nip59.createRumor(content, senderPrivateKey);
+  const seal = nip59.createSeal(rumor, senderPrivateKey, recipientPublicKey);
+  return nip59.createWrap(seal, recipientPublicKey);
 }
 
 /**
@@ -43,7 +47,7 @@ export function createGiftWrapEvent(content: any, senderPrivateKey: Uint8Array, 
  * @returns The unwrapped rumor.
  */
 export function unwrapGiftWrapEvent(wrappedEvent: any, recipientPrivateKey: Uint8Array): any {
-  return nip59.unwrapEvent(wrappedEvent, recipientPrivateKey)
+  return nip59.unwrapEvent(wrappedEvent, recipientPrivateKey);
 }
 
 /**
@@ -53,5 +57,5 @@ export function unwrapGiftWrapEvent(wrappedEvent: any, recipientPrivateKey: Uint
  * @returns An array of unwrapped rumors.
  */
 export function unwrapMultipleGiftWrapEvents(wrappedEvents: any[], recipientPrivateKey: Uint8Array): any[] {
-  return nip59.unwrapManyEvents(wrappedEvents, recipientPrivateKey)
+  return nip59.unwrapManyEvents(wrappedEvents, recipientPrivateKey);
 }
