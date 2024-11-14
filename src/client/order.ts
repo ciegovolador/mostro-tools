@@ -15,7 +15,7 @@ export async function newOrder(
   privateKey: Uint8Array,
   recipientPublicKey: string,
   relayUrl: string,
-): Promise<any> {
+): Promise<NostrEvent> {
   // Create the order event
   const event = createOrder(order, privateKey, recipientPublicKey)
 
